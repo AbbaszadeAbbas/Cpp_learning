@@ -5,6 +5,7 @@
     "*.md": "markdown",
     "*.html": "html",
     "ostream": "cpp",
-    "iostream": "cpp"
+    "iostream": "cpp",
+    "cmath": "cpp"
   }
 }
