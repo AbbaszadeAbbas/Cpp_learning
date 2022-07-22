@@ -6,6 +6,7 @@
     "*.html": "html",
     "ostream": "cpp",
     "iostream": "cpp",
-    "cmath": "cpp"
+    "cmath": "cpp",
+    "iomanip": "cpp"
   }
 }
