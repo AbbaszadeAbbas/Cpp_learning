@@ -1,0 +1,7 @@
+numbers = [1,2,3,4,5]
+max = 0
+for number in numbers:
+  while number > max:
+    max = number
+
+print(max)
