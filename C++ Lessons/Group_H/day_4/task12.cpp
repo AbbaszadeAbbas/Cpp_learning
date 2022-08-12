@@ -4,7 +4,7 @@ int main(){
   int n, m;
   cin>>n;
   m = sqrt(n);
-  if(m*m == n){
+  if(pow(m, 2) == n){
       cout<<m<<endl;
   }
   else{

@@ -1,13 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main(){
-  int n, m;
+  double n;
+  int  m;
   cin>>n;
-  m = sqrt(n);
-  if(m*m == n){
-      cout<<m<<endl;
-  }
-  else{
-      cout<<"No"<<endl;
+  m = n * 1000;
+  if(m%1000 == 0){
+    cout<<"Ok";
+  }else if(m%1000 != 0){
+    cout<<"No";
   }
 }
