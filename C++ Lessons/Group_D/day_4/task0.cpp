@@ -13,4 +13,6 @@ int main() {
     }
   }
   cout<<b<<endl;
+
+  system("pause");
 }

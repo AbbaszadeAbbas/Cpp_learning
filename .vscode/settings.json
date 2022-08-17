@@ -9,5 +9,6 @@
     "cmath": "cpp",
     "iomanip": "cpp",
     "random": "cpp"
-  }
+  },
+  "C_Cpp.errorSquiggles": "Disabled"
 }
