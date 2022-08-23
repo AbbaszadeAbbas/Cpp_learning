@@ -11,7 +11,7 @@ int main() {
 		long long min_element = min(first, second);
 		cout<<"Two roots: "<<min_element<<" "<<max_element;
 	}else if(D==0){
-		long long only_element = (-1 * b) /2;
+		long long only_element = (-1 * b) /(2*a);
 		cout<<"One root: "<<only_element;
 	}else{
 		cout<<"No roots";
