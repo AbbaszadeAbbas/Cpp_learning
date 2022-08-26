@@ -1,16 +1,20 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 int main() {
-  // int a;
-  // cin>>a;
-  // int arrays[a][a];
-  // for(int i = 0;i<a;i++){
-  //   for(int j = 0; j < a;j++){
-  //     cin>>arrays[a][a];
-  //   }
-  // }
-  int a;
-  cin>>a;
-  int arrays[a];
-
+	int n,total = 0;
+	cin>>n;
+	int a[n][n];
+	for(int i = 0; i < n; i++){
+		for(int j = 0; j < n; j++){
+			cin>>a[i][j];
+		}
+	}
+	for(int i = 0; i < n; i++){
+		for(int j = 0; j < n; j++){
+			if(a[i][j]>0){
+				total += a[i][j];
+			}
+		}
+	}
+	cout<<total;
 }
