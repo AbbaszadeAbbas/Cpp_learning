@@ -1,18 +1,27 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 int main() {
-  int a;
-  cin>>a;
-  int b;
-  cin>>b;
-  int arrays[a][b]; // = {{1,2,3},{4,5,6},{7,8,9}};
-  for(int i = 0; i < a; i++){
-    for(int j = 0; j < a; j++){
-      cin>>arrays[i][j];
-    }
-  }
-  int result = arrays[0][0]+arrays[0][2] + arrays[1][1] + arrays[2][0]+arrays[2][2];
-  cout<<result;
+	int n,m,total = 0;
+	cin>>n>>m;
+	int array1[n][m];
+	int array2[n][m];
+	for(int i = 0; i < n; i++){
+		for(int j = 0; j < m; j++){
+			cin>>array1[i][j];
+		}
+	}
+	for(int i = 0; i < n; i++){
+		for(int j = 0; j < m; j++){
+			cin>>array2[i][j];
+		}
+	}
 
-  return 0;
+	for(int i = 0; i < n; i++){
+		for(int j = 0; j < m; j++){
+			if(array2[i][j]==1){
+				total += array1[i][j];
+			}
+		}
+	}
+	cout<<total;
 }
