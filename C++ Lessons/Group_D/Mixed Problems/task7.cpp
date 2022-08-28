@@ -1,11 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main() {
-	int n;
+	long long n;
 	cin>>n;
-	if(n%2 != 0){
-		cout<<"YES";
-	}else if(n>0 && n/1000 != 0){
+	if(n%2 != 0 || n>0 && n<=999 && n>=100){
 		cout<<"YES";
 	}else{
 		cout<<"NO";
