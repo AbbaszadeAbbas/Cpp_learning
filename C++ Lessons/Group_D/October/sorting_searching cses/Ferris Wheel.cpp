@@ -1,16 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main(){
-  long long n,x,helper,sum = 0;;
-  cin>>n>>x;
-  for(long long i = 0;i<n;i++){
-    cin>>helper;
-    sum+=helper;
-  }
-  if(sum%x != 0){
-    cout<<(sum/x) + 1;
-  }
-  if(sum%x == 0){
-    cout<<(sum/x);
-  }
+    long long a,b,helper,count = 0;
+    cin>>a>>b;
+    vector<long long>v;
+    for(long long i =0;i<a;i++){
+        cin>>helper;
+        v.push_back(helper);
+    }
+    sort(v.begin(), v.end());
+    long long l = 0;
+    long long r = a-1;
+    while(l <= r){
+        if(v[l] + v[r] <= b){
+            l++;
+            r--;
+        }else{
+            r--;
+        }
+        count++;
+    }
+    cout<<count<<endl;
 }
