@@ -7,7 +7,7 @@ int main() {
     vector<string>v;
     for(long long i = 0;i<s.size();i++){
         if(s[i] == ' ' && s[i-1] != ' '){
-            count++;    
+            count++;
         }
     }
     cout<<count;
