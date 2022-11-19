@@ -1,16 +1,26 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main() {
-    long long a;
-    vector<long long>reqemler;
-    for(long long i = 1;i<10;i++){
-        reqemler.push_back(i);
+    long long say = 0;
+    char ch;
+    vector<char>v;
+    vector<int>c;
+    while(cin>>ch){
+        v.push_back(ch);
     }
-    set<long long>s;
-    while(cin>>a){
-        s.insert(a);
+    for(int i = 0;i<10;i++){
+        say = 0;
+        for(int j = 0;j<v.size();j++){
+            if(i!=v[j]-48){
+                say++;
+            }
+        }
+        if(say == v.size()){
+            c.push_back(i);
+        }
     }
-    for(auto& i:s){
-        cout<<i<<" ";
+    cout<<(long long)c.size()<<endl;
+    for(long long i = 0;i<c.size();i++){
+        cout<<(long long)c[i]<<" ";
     }
 }
