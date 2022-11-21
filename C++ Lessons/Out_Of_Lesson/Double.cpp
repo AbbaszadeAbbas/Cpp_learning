@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main() {
-    long long a;
+    string a;
     cin>>a;
-    cout<< (a/100)+(a/10%10)+(a%10) ;
+    cout<<a[0]<<a[0]<<a[1]<<a[1];
 }
