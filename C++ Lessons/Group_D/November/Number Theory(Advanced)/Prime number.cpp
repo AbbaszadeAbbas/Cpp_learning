@@ -10,7 +10,9 @@ int main() {
             break;
         }
     }
-    if(){
-        
+    if(ans == a){
+        cout<<"Yes";
+    }else{
+        cout<<"No";
     }
 }
