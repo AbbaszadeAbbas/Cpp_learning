@@ -9,4 +9,4 @@ int main(){
     l = m; 
     while (m - l != 0){ n++; m = sqrt(n); l = m; } 
     cout<<n; 
-}
+} 

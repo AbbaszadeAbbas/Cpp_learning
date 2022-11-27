@@ -1,18 +1,15 @@
 #include <bits/stdc++.h>
-#define MAXIMUM 1000000
-using namespace std;
-int main() {
-    long long a,ans;
-    cin>>a;
-    for(long long i = 2;i<MAXIMUM;i++){
-        if(a%i == 0){
-            ans = i;
-            break;
-        }
+using namespace std; 
+int main( ) { 
+    long long size;
+    bool helper=true;
+    cin>>size;
+    for(long long i=2;i<=sqrt(size);i++) {
+        if(size%i==0) { 
+            helper=false; 
+            break; 
+        } 
     }
-    if(ans == a){
-        cout<<"Yes";
-    }else{
-        cout<<"No";
-    }
+    if(helper)cout<<1;
+    else cout<<0; 
 }
