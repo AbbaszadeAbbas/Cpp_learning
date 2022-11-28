@@ -1,15 +1,18 @@
-#include <iostream>
-int main() {
-    long long a;
-    std::cin>>a;
-    for(long long i = 2;i<=a;i++){
-        if(a%i == 0){
-            if(a/i == 1){
-                std::cout<<i;
-                return 0;
-            }
-            std::cout<<i<<"*";
-            a = a/i;
-        }
-    }
+#include <bits/stdc++.h>
+using namespace std;
+int main ( ) {
+    unsigned long long n,div=2;
+    cin>>n;
+    while(div*div<=n) {
+        if(n%div==0) {
+            cout<<div;
+            n=n/div;
+            cout<<"*";
+        } else if(div==2) {
+            div=3;
+        } else { 
+            div+=2; 
+        } 
+    } 
+    cout<<n; 
 }
