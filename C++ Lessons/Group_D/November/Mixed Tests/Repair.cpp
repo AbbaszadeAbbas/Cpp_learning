@@ -5,11 +5,10 @@ int main() {
     cin>>size;
     for(long long i = 0;i<size;i++) {   
         cin>>x>>y>>z;
-        result = (((x*z)*2)+((y*z)*2))/16;
-        if(result > 1){
-            cout<<result<<endl;
-        }else{
-            cout<<1<<endl;
+        result = ((x+y)*z)/8;
+        if(((x+y)*z)%8 != 0){
+            result++;
         }
+        cout<<result<<endl;
     }
 }
