@@ -2,14 +2,12 @@
 using namespace std;
 int main() {
     long long x,y,counter,ans = -1,answer;
-    cin>>x>>y;
     map<long long, long long>m;
-    
-    for(long long j = x;j<=y;j++){
+    cin>>x>>y;
+
+    for(long long j = x;j<=sqrt(y);j++){
         counter = 0;
-        for(long long i = 1;i<j;i++){
-            if(j%i == 0)counter++;
-        }
+        for(long long i = 1;i<=j;i++)if(j%i == 0)counter++;
         m[counter]++;
     }
 
@@ -19,6 +17,5 @@ int main() {
             answer = x.first;
         }
     }
-
-    cout<<answer<<" "<<ans;
+    cout<<answer<<" "<<ans+2;
 }
