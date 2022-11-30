@@ -1,21 +1,30 @@
 #include <bits/stdc++.h>
 using namespace std;
-int main() {
-    long long x,y,counter,ans = -1,answer;
-    map<long long, long long>m;
-    cin>>x>>y;
-
-    for(long long j = x;j<=sqrt(y);j++){
-        counter = 0;
-        for(long long i = 1;i<=j;i++)if(j%i == 0)counter++;
-        m[counter]++;
-    }
-
-    for(auto x:m){
-        if(ans<=x.second){
-            ans = x.second;
-            answer = x.first;
+int number_of_divisors(int n){
+    int say = 0, sq = sqrt(n);
+    for(int i = 1; i <= sq; i++){
+        if(n%i == 0){
+            say++;
+            if(i != n/i){
+                say++;
+            }
         }
     }
-    cout<<answer<<" "<<ans+2;
+    return say;
+}
+int main(){
+    map<int, int>m;
+    int a, b, maks = 0, bolen;
+    cin>>a>>b;
+    for(int i = a; i <= b; i++){
+        int say = number_of_divisors(i);
+        m[say]++;
+    }
+    for(auto i = m.begin(); i != m.end(); i++){
+        if(i->second >= maks){
+            maks = i->second;
+            bolen = i->first;
+        }
+    }
+    cout<<bolen<<" "<<maks<<endl;
 }
