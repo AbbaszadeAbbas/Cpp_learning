@@ -5,9 +5,9 @@ int main( ) {
     bool helper=true;
     cin>>size;
     for(long long i=2;i<=sqrt(size);i++) {
-        if(size%i==0) { 
-            helper=false; 
-            break; 
+        if(size%i==0) {
+            helper=false;
+            break;
         } 
     }
     if(helper)cout<<"Yes";
