@@ -14,7 +14,6 @@ int main() {
 
         for(auto x:m){
             if(m.size() == 1 and x.second>1){    cout<<"homo"<<endl;    }
-            if((m.size() == 1 ||m.size() == 0) and (x.second==1 || x.second == 0)){   cout<<"neither"<<endl; }
             else if(m.size() > 1){
                 if(x.second == 1){  hetero++; }
                 if(x.second > 1){   homo++;   }
@@ -22,6 +21,7 @@ int main() {
         }
         if(homo == 0 and hetero > 1){  cout<<"hetero"<<endl;  }
         if(homo > 0 and hetero <= 0){  cout<<"homo"<<endl;    }
-        if(homo > 0 and hetero > 0) {  cout<<"both"<<endl;   }
+        else if(homo > 0 and hetero > 0) {  cout<<"both"<<endl;   }
+        else{cout<<"neither"<<endl;}
     }
 }
