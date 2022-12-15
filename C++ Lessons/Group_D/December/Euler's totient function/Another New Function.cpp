@@ -14,12 +14,7 @@ int phi(int n){
     return ans;
 }
 int main() {
-    long long n;
-    while(cin>>n){
-        if(n == 0){
-            return 0;
-        }else{
-            cout<<phi(n)<<endl;
-        }
-    }
+    long long n,helper;
+    cin>>n;
+    vector<long long>v;
 }
