@@ -11,6 +11,7 @@ int phi(int n){
     if(n>1) ans-=ans/n;
     return ans;
 }
+
 int main() {
     long long n,helper,h;
     cin>>n;
@@ -21,8 +22,7 @@ int main() {
             for(long long j = 1;j<=helper;j++){
                 h+=phi(i)*phi(j);
             }
-        } 
+        }
         cout<<h<<endl;
     }
-   
 }
