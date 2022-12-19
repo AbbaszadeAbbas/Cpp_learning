@@ -1,11 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
-int phi(long long a){
+long long totient(long long a){
     long long ans = a;
     long long sq = sqrt(a);
     for(long long i = 2;i<=sq;i++){
         if(a%i == 0){
-            while(a%i == 0){a /= i;}
+            while(a%i == 0){a/=i;}
             ans -= ans/i;
         }
     }
@@ -14,15 +14,16 @@ int phi(long long a){
     }
     return ans;
 }
-int main() {
-    long long sum[10001] = {0};
+int main(){
+    long long m[10001] = {0};
     for(long long i = 1;i<=10000;i++){
-        sum[i] = sum[i-1] + phi(i);
+        m[i] = m[i-1] + totient(i);
     }
-    long long a,helper;
+    long long a;
     cin>>a;
+    long long helper;
     while(a--){
         cin>>helper;
-        cout<<sum[helper]*sum[helper]<<endl;
+        cout<<m[helper]*m[helper]<<endl;
     }
 }
