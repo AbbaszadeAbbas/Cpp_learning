@@ -1,25 +1,39 @@
 #include <bits/stdc++.h>
+#define MAX 2000000
 using namespace std;
-int phi(int n){
-    int ans = n;
-    for(int i = 2;i*i<=n;i++){
-        if(n%i==0){
-            while(n%i==0){ n/=i;}
-            ans -= ans/i;
-        }   
-    }
-    if(n>1){
-        ans-=ans/n;
-    }
-    return ans;
-}
-int main() {
-    long long n;
-    while(cin>>n){
-        if(n == 0){
-            return 0;
-        }else{
-            cout<<phi(n)<<endl;
+vector<int> phi(MAX+1);
+vector<int> sodf(MAX+1);
+void phi_1_to_n(){
+    for (int i = 0; i <= MAX; i++){phi[i] = i;}
+    
+    for (int i = 2; i <= MAX; i++){
+        if (phi[i] == i){
+            for (int j = i; j <= MAX; j += i){
+                phi[j] -= phi[j] / i;
+            }
         }
+    }
+}
+void prefix_sum_sodf(){
+    sodf[1] = 1;
+    int step, fi;
+    for(int i = 2; i <= MAX; i++){
+        fi = phi[i];
+        step = 1;
+        while(fi != 1){
+            step++;
+            fi = phi[fi];
+        }
+        sodf[i] = sodf[i-1] + step;
+    }
+}
+int main(){
+    phi_1_to_n();
+    prefix_sum_sodf();
+    int t, m, n;
+    cin>>t;
+    while(t--){
+        cin>>m>>n;
+        cout<<sodf[n] - sodf[m-1]<<endl;
     }
 }
