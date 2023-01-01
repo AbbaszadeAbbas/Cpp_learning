@@ -1,28 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main(){
-	long long n,z=0,k=0,f=0;
-	string a,b,c;
+	long long num,counter1=0,counter2=0,counter3=0;
 	vector<long long>helper1,helper2;
 	vector<string>s;
-    cin>>n;
-    if(n==2){
-        cout<<"1 1"<<endl;
-        cout<<1<<endl<<2;
-        return 0;
-    }
-    if(n%2==0){
-        for(long long i=0;i<n;i++){
-           z=z+1;
+    cin>>num;
+    if(num==2) cout<<1<<" "<<1<<endl<<1<<endl<<2; return 0;
+    
+    if(num%2==0){
+        for(long long i=0;i<num;i++){
+           counter1+=1;
             if(i%2==0){
-                if(k%2==0) helper1.push_back(z);
-                else helper2.push_back(z);
-                k=k+1;
+                if(counter2%2==0) helper1.push_back(counter1);
+                else helper2.push_back(counter1);
+                counter2+=1;
             }
             else{
-                if(f%2==0) helper2.push_back(z);
-                else helper1.push_back(z);
-                f=f+1;
+                if(counter3%2==0) helper2.push_back(counter1);
+                else helper1.push_back(counter1);
+                counter3+=1;
             }
         }
     }
@@ -30,19 +26,19 @@ int main(){
         helper1.push_back(1);
         helper1.push_back(2);
         helper2.push_back(3);
-        z=3;
-        for(long long i=0;i<n-3;i++){
-           z=z+1;
+        counter1=3;
+        for(long long i=0;i<num-3;i++){
+           counter1+=1;
             if(i%2==0){
-                if(k%2==0)helper1.push_back(z);
-                else helper2.push_back(z);
+                if(counter2%2==0)helper1.push_back(counter1);
+                else helper2.push_back(counter1);
 
-                k=k+1;
+                counter2+=1;
             }
             else{
-                if(f%2==0) helper2.push_back(z);
-                else helper1.push_back(z);
-                f=f+1;
+                if(counter3%2==0) helper2.push_back(counter1);
+                else helper1.push_back(counter1);
+                counter3+=1;
             }
             
         }
