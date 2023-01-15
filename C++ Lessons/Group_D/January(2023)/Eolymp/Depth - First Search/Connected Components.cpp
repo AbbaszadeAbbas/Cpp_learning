@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 #define ll long long
-#define MAX 9223372036854775806
+#define MAX 9223372036854775807
 using namespace std;
 ll color[101];
 ll graph[101][101];
