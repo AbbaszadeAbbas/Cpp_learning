@@ -1,80 +1,57 @@
-// #include<bits/stdc++.h>
-// #define ll long long
-// #define MAX 9223372036854775806
-// using namespace std;
-// void solve(ll num, ll ans, ll m[])
-// {
-// 	ans = 0;
-// 	for(ll i = 1; i <= num; i++)
-// 	{
-// 		if(m[i] < m[i-1]){
-// 			ans++;
-// 		}
-// 	}
-// 	cout<<ans<<endl;
-// }
-// void result()
-// {
-// 	ll num,b, ans = 1,helper1,helper2;
-// 	cin>>num>>b;
-// 	ll a,m[num+1];
-// 	vector<ll>v;
-// 	for(ll i = 1; i <= num; i++)
-//     {
-//         cin>>a;
-//         // m[a] = i;
-// 		v.push_back(a);
-// 	}
-// 	while(b--)
-// 	{
-// 		cin>>helper1>>helper2;
-// 		swap(v[helper1-1], v[helper2-1]);
-// 		for(ll i = 1;i<=num;i++)
-// 		{
-// 			m[v[i-1]] = i;
-// 		}
-// 		solve(num, ans,m);
-// 	}
-	
-// }
-// // 4 1 2 5 3
-// // 3 1 2 5 4
-// // 3 2 1 5 4
-// int main()
-// {
-// 	result();
-// 	cout<<endl;
-// //     system("pause");
-// 	return 0;
-// }
-
-
 #include<bits/stdc++.h>
 #define ll long long
+#define MAX 9223372036854775806
 using namespace std;
 int main()
 {
-    ll num,b, ans = 1,helper1,helper2;
-	cin>>num>>b;
-	ll a,m[num+1];
-	vector<ll>v;
-	for(ll i = 1; i <= num; i++)
-    {
-        cin>>a;
-		v.push_back(a);
-	}
-	while(b--)
+	ll n,q;
+	cin>>n>>q;
+	vector<ll>values(n+1);
+	vector<ll>positionOF(n+1);
+	for(ll i = 1;i<=n;i++)
 	{
-		cin>>helper1>>helper2;ans = 0;
-		swap(v[helper1-1], v[helper2-1]);
-		for(ll i = 1;i<=num;i++)
+		cin>>values[i];
+		positionOF[values[i]] = i;
+	}
+	ll ans = 1;
+	for(ll i = 1;i<n;i++)
+	{
+		// ans+=(positionOF[i] > positionOF[i+1]);
+		if(positionOF[i] > positionOF[i+1])ans++;
+	}
+	ll l,r;
+	set<pair<ll,ll>>updatedPairs;
+	while(q--)
+	{
+		cin>>l>>r;
+		if(values[l]+1<=n)updatedPairs.insert({values[l],values[l]+1});
 		{
-			m[v[i-1]] = i;
+			
 		}
-        for(ll i = 1; i <= num; i++)
-        {
-            if(m[i] < m[i-1])ans++;
-        }
-        cout<<ans<<endl;
+		if(values[l]-1>=1)updatedPairs.insert({values[l]-1,values[l]});
+		{
+			
+		}
+		if(values[r]+1<=n)updatedPairs.insert({values[r],values[r]+1});
+		{
+			
+		}
+		if(values[r]-1>=1)
+		{
+			updatedPairs.insert({values[r]-1,values[r]});
+		}
+		for(pair<ll,ll> swapped : updatedPairs)
+		{
+			ans -= positionOF[swapped.first] > positionOF[swapped.second];
+		}
+		swap(values[l], values[r]);
+		positionOF[values[l]] = l;
+		positionOF[values[r]] = r;
+		for(pair<ll,ll> swapped : updatedPairs)
+		{
+			ans += positionOF[swapped.first] > positionOF[swapped.second];
+		}
+		cout << ans << endl;
+		updatedPairs.clear();
 	}
 }
