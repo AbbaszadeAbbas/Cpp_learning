@@ -2,13 +2,15 @@
 #define ll long long
 #define MAX 1000000
 using namespace std;
-ll a, color[101], g[101][101], ans;
+ll a,ans;
+char g[100][100];
+bool color[100];
 void dfs(ll num)
 {
     color[num] = 1;
     for(ll i = 0;i<a;i++)
     {
-        if(g[num][i] == 1 and color[i] == 0)dfs(i);
+        if(g[num][i] == '1' and color[i] == 0)dfs(i);
     }
 }
 void result()
